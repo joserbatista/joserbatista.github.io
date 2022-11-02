@@ -1,0 +1,267 @@
+﻿<krpano version="1.20.9" title="Vila Nova de Gaia">
+
+<include url="skin/vtourskin_auto.xml"/>
+<include url="skin/auto_core.xml"/>
+<events name="startbehavioursevents" onxmlcomplete="startbehavioursxmlcompleteaction();" keep="true"/>
+<panoview h="67.950000" v="0.000000" fov="120.000" hmin="-180" hmax="180" vmin="-90" vmax="90" fovmax="140"/>
+<progress showload="none" showwait="none"/>
+<autorotate enabled="true" waittime="1.0" speed="40"/>
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="false"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+<hotspot name="nadirlogo"
+	url="nadir_geral.png"
+	keep="true"
+	ath="0"
+	atv="90"
+	distorted="false"
+	zoom="true"
+	scale=".75"
+	rotate="0.0"
+	rotatewithview="false"
+	 />
+	
+	<scene name="scene_01Exterior" title="Exterior" onstart="" thumburl="panos/01Exterior.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="4.788" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/01Exterior.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/01Exterior.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_02Zona_Comum" title="Zona Comum" onstart="" thumburl="panos/02Zona_Comum.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.000" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/02Zona_Comum.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/02Zona_Comum.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_03Hall_de_ENtrada" title="Hall de Entrada" onstart="" thumburl="panos/03Hall_de_ENtrada.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="59.570" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/03Hall_de_ENtrada.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/03Hall_de_ENtrada.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_04Cozinha" title="Cozinha" onstart="" thumburl="panos/04Cozinha.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-89.781" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/04Cozinha.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/04Cozinha.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_05Sala" title="Sala" onstart="" thumburl="panos/05Sala.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="119.504" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/05Sala.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/05Sala.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_06Varanda" title="Varanda" onstart="" thumburl="panos/06Varanda.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="89.781" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06Varanda.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/06Varanda.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_07Hall_dos_Quartos" title="Hall dos Quartos" onstart="" thumburl="panos/07Hall_dos_Quartos.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.000" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/07Hall_dos_Quartos.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/07Hall_dos_Quartos.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_08Hall_de_Suite" title="Hall de Suite" onstart="" thumburl="panos/08Hall_de_Suite.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="41.482" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/08Hall_de_Suite.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/08Hall_de_Suite.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_09WC" title="WC" onstart="" thumburl="panos/09WC.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.000" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/09WC.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/09WC.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_10Quarto" title="Quarto" onstart="" thumburl="panos/10Quarto.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-175.430" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/10Quarto.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/10Quarto.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_11WC" title="WC" onstart="" thumburl="panos/11WC.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="72.504" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11WC.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/11WC.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_12Quarto" title="Quarto" onstart="" thumburl="panos/12Quarto.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="61.695" vlookat="0.000" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/12Quarto.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/12Quarto.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+
+</krpano>
